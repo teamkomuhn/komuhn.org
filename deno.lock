@@ -1,0 +1,30 @@
+{
+  "version": "4",
+  "specifiers": {
+    "npm:@preact/signals@^2.0.4": "2.2.0_preact@10.26.8",
+    "npm:preact@^10.26.6": "10.26.8"
+  },
+  "npm": {
+    "@preact/signals-core@1.9.0": {
+      "integrity": "sha512-uUgFHJLWxb33rfCtb1g+1e3Rg7Jl5EALhGTHlQ5Y0w37OF+fdidYdYEE6crbpUOYDOjlmelIWf0ulXr1ggfUkg=="
+    },
+    "@preact/signals@2.2.0_preact@10.26.8": {
+      "integrity": "sha512-P3KPcEYyVk9Wiwfw68QQzRpPkt0H+zjfH3X4AaGCDlc86GuRBYFGiAxT1nC5F5qlsVIEmjNJ9yVYe7C91z3L+g==",
+      "dependencies": [
+        "@preact/signals-core",
+        "preact"
+      ]
+    },
+    "preact@10.26.8": {
+      "integrity": "sha512-1nMfdFjucm5hKvq0IClqZwK4FJkGXhRrQstOQ3P4vp8HxKrJEMFcY6RdBRVTdfQS/UlnX6gfbPuTvaqx/bDoeQ=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@fresh/core@^2.0.0-alpha.34",
+      "jsr:@fresh/plugin-tailwind@^0.0.1-alpha.7",
+      "npm:@preact/signals@^2.0.4",
+      "npm:preact@^10.26.6"
+    ]
+  }
+}
