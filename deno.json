@@ -21,9 +21,20 @@
 	},
 
 	"imports": {
-		"fresh": "jsr:@fresh/core@^2.0.0-alpha.34",
+		"@fresh/core": "jsr:@fresh/core@^2.0.0-alpha.34",
 		"preact": "npm:preact@^10.26.8",
-		"@preact/signals": "npm:@preact/signals@^2.2.0"
+		"@preact/signals": "npm:@preact/signals@^2.2.0",
+		"@std/path": "jsr:@std/path@^1.1.0",
+		"@std/front-matter": "jsr:@std/front-matter@^1.0.9",
+		"@std/yaml": "jsr:@std/yaml@^1.0.7",
+		"unified": "npm:unified@^11.0.5",
+		"remark-parse": "npm:remark-parse@^11.0.0",
+		"remark-frontmatter": "npm:remark-frontmatter@^5.0.0",
+		"remark-smartypants": "npm:remark-smartypants@^3.0.2",
+		"remark-rehype": "npm:remark-rehype@^11.1.2",
+		"rehype-stringify": "npm:rehype-stringify@^10.0.1",
+		"micromark-extension-mdx-md": "npm:micromark-extension-mdx-md@^2.0.0",
+		"micromark-extension-mdx-jsx": "npm:micromark-extension-mdx-jsx@^3.0.2"
 	},
 
 	"lint": {
@@ -35,8 +46,8 @@
 	"lock": false,
 
 	"tasks": {
-		"dev": "deno run -A --watch=static,routes dev.ts",
-		"build": "deno run -A dev.ts build",
-		"start": "deno run -A main.ts"
+		"dev": "deno run --allow-all --watch=static,routes dev.ts",
+		"build": "deno run --allow-all dev.ts build",
+		"start": "deno run --allow-all main.ts"
 	}
 }
