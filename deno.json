@@ -24,17 +24,12 @@
 		"@fresh/core": "jsr:@fresh/core@^2.0.0-alpha.34",
 		"preact": "npm:preact@^10.26.8",
 		"@preact/signals": "npm:@preact/signals@^2.2.0",
-		"@std/path": "jsr:@std/path@^1.1.0",
-		"@std/front-matter": "jsr:@std/front-matter@^1.0.9",
-		"@std/yaml": "jsr:@std/yaml@^1.0.7",
-		"unified": "npm:unified@^11.0.5",
-		"remark-parse": "npm:remark-parse@^11.0.0",
+		"esbuild": "npm:esbuild@^0.23.1",
+		"@mdx-js/esbuild": "npm:@mdx-js/esbuild@^3.1.0",
 		"remark-frontmatter": "npm:remark-frontmatter@^5.0.0",
+		"remark-mdx-frontmatter": "npm:remark-mdx-frontmatter@^5.2.0",
 		"remark-smartypants": "npm:remark-smartypants@^3.0.2",
-		"remark-rehype": "npm:remark-rehype@^11.1.2",
-		"rehype-stringify": "npm:rehype-stringify@^10.0.1",
-		"micromark-extension-mdx-md": "npm:micromark-extension-mdx-md@^2.0.0",
-		"micromark-extension-mdx-jsx": "npm:micromark-extension-mdx-jsx@^3.0.2"
+		"unist-util-flatmap": "npm:unist-util-flatmap@^1.0.0"
 	},
 
 	"lint": {

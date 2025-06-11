@@ -1,7 +1,5 @@
 import type { JSX } from "preact/jsx-runtime";
 import { page } from "@fresh/core";
-import { parse } from "@std/path";
-import { extractYaml } from "@std/front-matter";
 import { define } from "../../utils.ts";
 
 export interface Frontmatter {
@@ -15,7 +13,7 @@ export interface Frontmatter {
 	partners?: string[];
 }
 
-export const PROJECTS_DIRECTORY = "content/projects";
+export const PROJECTS_DIRECTORY = "_content/projects";
 
 export const handler = define.handlers({
 	GET(context) {
@@ -28,10 +26,9 @@ export default define.page(async () => {
 	const projects: JSX.Element[] = [];
 
 	for await (const entry of Deno.readDir(PROJECTS_DIRECTORY)) {
-		const slug = parse(entry.name).name;
-		const path = `${PROJECTS_DIRECTORY}/${entry.name}`;
-		const content = await Deno.readTextFile(path);
-		const frontmatter = extractYaml<Frontmatter>(content).attrs;
+		const slug = entry.name.slice(0, -3);
+		const path = `../../${PROJECTS_DIRECTORY}/${entry.name}`;
+		const { frontmatter } = await import(path) as { frontmatter: Frontmatter };
 
 		projects.push(
 			<li key={slug}>
