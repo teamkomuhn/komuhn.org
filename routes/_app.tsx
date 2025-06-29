@@ -1,3 +1,4 @@
+import Navigation from "../components/navigation.tsx";
 import { define } from "../utils.ts";
 
 export default define.page((context) => {
@@ -11,42 +12,8 @@ export default define.page((context) => {
 
 			<body>
 				<header>
-					<nav>
-						<a href="/">
-							<img src=":heavysob:" />
-						</a>
-
-						<p>
-							komuhn.org
-							<a href={context.url.pathname}>{context.url.pathname}</a>
-						</p>
-
-						<ul>
-							<li>
-								<a href="/projects">Projects</a>
-							</li>
-
-							<li>
-								<a href="/proposals">Proposals</a>
-							</li>
-
-							<li>
-								<a href="/team">Team</a>
-							</li>
-
-							<li>
-								<a href="/contact">Contact</a>
-							</li>
-
-							<li>
-								<a href="/learnings">Learnings</a>
-							</li>
-
-							<li>
-								<a href=":heavysob:">Substack</a>
-							</li>
-						</ul>
-					</nav>
+					<img alt="TODO" src="/komuhn.svg" />
+					<Navigation pathname={context.url.pathname} />
 				</header>
 
 				<main>
