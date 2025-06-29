@@ -1,7 +1,10 @@
+import type { JSX } from "preact/jsx-runtime";
 import { HttpError, page } from "@fresh/core";
 import { define } from "../../utils.ts";
 import { type Frontmatter, PROJECTS_DIRECTORY } from "./index.tsx";
-import type { JSX } from "preact/jsx-runtime";
+import Image from "../../components/post_image.tsx";
+import Headings from "../../components/post_headings.tsx";
+import Metadata from "../../components/post_metadata.tsx";
 
 export const handler = define.handlers({
 	async GET(context) {
@@ -25,10 +28,14 @@ export const handler = define.handlers({
 });
 
 export default define.page<typeof handler>((context) => {
+	const { frontmatter } = context.data;
+
 	return (
 		<article>
 			<header>
-				<h1>{context.data.frontmatter.title}</h1>
+				<Image {...frontmatter} />
+				<Headings {...frontmatter} />
+				<Metadata {...frontmatter} />
 			</header>
 
 			<context.data.Component />

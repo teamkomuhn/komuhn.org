@@ -28,11 +28,11 @@ export default define.page(async () => {
 	for await (const entry of Deno.readDir(PROJECTS_DIRECTORY)) {
 		const slug = entry.name.slice(0, -3);
 		const path = `../../${PROJECTS_DIRECTORY}/${entry.name}`;
-		const { frontmatter } = await import(path) as { frontmatter: Frontmatter };
+		const { title } = (await import(path)).frontmatter as Frontmatter;
 
 		projects.push(
 			<li key={slug}>
-				<a href={`/projects/${slug}`}>{frontmatter.title}</a>
+				<a href={`/projects/${slug}`}>{title}</a>
 			</li>,
 		);
 	}
