@@ -49,7 +49,7 @@ const context = await esbuild.context({
 	outbase: "content",
 });
 
-promises.push(context.watch());
+// promises.push(context.watch());
 
 export const app = new App<State>();
 
