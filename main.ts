@@ -61,7 +61,7 @@ await fsRoutes(app, {
 });
 
 if (import.meta.main) {
-	promises.push(app.listen());
+	await app.listen();
 }
 
-await Promise.all(promises);
+// await Promise.all(promises);
