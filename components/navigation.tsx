@@ -1,39 +1,31 @@
-import Breadcrumbs from "../components/breadcrumbs.tsx";
-
-export default function ({ pathname }: { pathname: string }) {
+export default function () {
 	return (
 		<nav>
-			<Breadcrumbs pathname={pathname} />
+			<menu>
+				<li>
+					<a href="/projects">Projects</a>
+				</li>
 
-			<details>
-				<summary></summary>
+				<li>
+					<a href="/proposals">Proposals</a>
+				</li>
 
-				<menu>
-					<li>
-						<a href="/projects">Projects</a>
-					</li>
+				<li>
+					<a href="/team">Team</a>
+				</li>
 
-					<li>
-						<a href="/proposals">Proposals</a>
-					</li>
+				<li>
+					<a href="/contact">Contact</a>
+				</li>
 
-					<li>
-						<a href="/team">Team</a>
-					</li>
+				<li>
+					<a href="/learnings">Learnings</a>
+				</li>
+			</menu>
 
-					<li>
-						<a href="/contact">Contact</a>
-					</li>
-
-					<li>
-						<a href="/learnings">Learnings</a>
-					</li>
-
-					<li>
-						<a href="TODO">Substack</a>
-					</li>
-				</menu>
-			</details>
+			<p>
+				<a href="https://substack.com/@komuhn">Substack</a>
+			</p>
 		</nav>
 	);
 }

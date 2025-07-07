@@ -31,7 +31,7 @@ export default define.page(async () => {
 		const { title } = (await import(path)).frontmatter as Frontmatter;
 
 		projects.push(
-			<li key={slug}>
+			<li>
 				<a href={`/projects/${slug}`}>{title}</a>
 			</li>,
 		);

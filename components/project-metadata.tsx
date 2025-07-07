@@ -1,6 +1,6 @@
 import type { Frontmatter } from "../routes/projects/index.tsx";
 
-const MARKDOWN_LINK = /^\[(?<text>.*)\]\((?<url>.*)\)$/;
+const MARKDOWN_LINK = /^\[(?<text>.*)\]\((?<href>.*)\)$/;
 
 export default function (
 	{ topics, timeline, region, links, partners }: Frontmatter,
@@ -49,11 +49,11 @@ export default function (
 						<td>
 							<ul>
 								{links.map((link) => {
-									const { text, url } = link.match(MARKDOWN_LINK)!.groups!;
+									const { href, text } = link.match(MARKDOWN_LINK)!.groups!;
 
 									return (
-										<li key={url}>
-											<a href={url}>{text}</a>
+										<li>
+											<a href={href}>{text}</a>
 										</li>
 									);
 								})}
@@ -68,7 +68,10 @@ export default function (
 
 						<td>
 							<ul>
-								{partners.map((partner) => <li key={partner}>{partner}</li>)}
+								{partners.map((partner) => (
+									/* deno-lint-ignore jsx-key */
+									<li>{partner}</li>
+								))}
 							</ul>
 						</td>
 					</tr>

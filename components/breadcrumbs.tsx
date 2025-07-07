@@ -1,16 +1,21 @@
 export default function ({ pathname }: { pathname: string }) {
-	const segments = pathname.split("/")
-		.filter((segment) => segment != "")
+	const breadcrumbs = pathname.split("/").filter(Boolean)
 		.map((segment, index, segments) => (
-			<>
-				/<a href={`/${segments.slice(0, index + 1).join("/")}`}>{segment}</a>
-			</>
+			<li>
+				<wbr />/
+				<a href={`/${segments.slice(0, index + 1).join("/")}`}>{segment}</a>
+			</li>
 		));
 
 	return (
-		<p>
-			<a href="/">komuhn.org</a>
-			{segments}
-		</p>
+		<nav>
+			<ol>
+				<li>
+					<a href="/">komuhn.org</a>
+				</li>
+
+				{breadcrumbs}
+			</ol>
+		</nav>
 	);
 }

@@ -1,5 +1,6 @@
-import Navigation from "../components/navigation.tsx";
 import { define } from "../utils.ts";
+import Header from "../components/header.tsx";
+import Footer from "../components/footer.tsx";
 
 export default define.page((context) => {
 	return (
@@ -11,14 +12,13 @@ export default define.page((context) => {
 			</head>
 
 			<body>
-				<header>
-					<img alt="TODO" src="/komuhn.svg" />
-					<Navigation pathname={context.url.pathname} />
-				</header>
+				<Header pathname={context.url.pathname} />
 
 				<main>
 					<context.Component />
 				</main>
+
+				<Footer />
 			</body>
 		</html>
 	);

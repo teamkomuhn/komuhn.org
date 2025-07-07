@@ -2,9 +2,9 @@ import type { JSX } from "preact/jsx-runtime";
 import { HttpError, page } from "@fresh/core";
 import { define } from "../../utils.ts";
 import { type Frontmatter, PROJECTS_DIRECTORY } from "./index.tsx";
-import Image from "../../components/post_image.tsx";
-import Headings from "../../components/post_headings.tsx";
-import Metadata from "../../components/post_metadata.tsx";
+import Image from "../../components/project-image.tsx";
+import Headings from "../../components/project-headings.tsx";
+import Metadata from "../../components/project-metadata.tsx";
 
 export const handler = define.handlers({
 	async GET(context) {
@@ -22,7 +22,6 @@ export const handler = define.handlers({
 		}
 
 		context.state.title = frontmatter.title;
-
 		return page({ frontmatter, Component });
 	},
 });
