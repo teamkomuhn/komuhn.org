@@ -1,3 +1,3 @@
 export default function () {
-	return <img alt="" src="/logo/komuhn.svg" />;
+	return <img alt="" src="/logos/komuhn.svg" />;
 }
