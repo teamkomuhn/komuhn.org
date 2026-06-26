@@ -37,6 +37,7 @@ img {
 
 a.button {
     border: 1px solid var(--color-black);
+    border-radius: 4px;
     padding: 0.7em 1em;
     text-decoration: none;
     color: var(--color-black);
@@ -48,10 +49,6 @@ a.button {
     > img {
         width: 16px;
         margin-left: 0.2em;
-    }
-
-    &[target=blank] {
-        
     }
 }
 
@@ -67,6 +64,11 @@ a.pill {
             display: inline-block;
         }
     }
+}
+
+a.dark {
+    background: var(--color-black);
+    color: #fff;
 }
 
 h1.logo,
@@ -113,7 +115,7 @@ body {
                 display: block;
                 padding: 0.5em 0.5em 0.6em 0.5em;
                 background: #fff;
-                border:var(--color-black) 2px solid;
+                border: var(--color-black) 2px solid;
                 width: fit-content;
             }
             
@@ -170,6 +172,8 @@ body {
         grid-column: 1 / -1;
 
         > article {
+            margin-bottom: var(--spacing);
+
             > img {
                 width: 100%;
                 object-fit: cover;
@@ -178,6 +182,7 @@ body {
                     height: 50vh;
                 }
             }
+
             > div {
                 padding: var(--spacing);
 
@@ -192,7 +197,10 @@ body {
                 }
 
                 > span.buttons {
-                    display: inline-block;
+                    display: flex;
+                    flex-flow: row wrap;
+                    align-items: center;
+                    column-gap: 1em; row-gap: 1em;
                     margin-top: 1em;
                 }
             }
@@ -201,7 +209,7 @@ body {
 
     > footer {
         grid-column: 1 / -1;
-        border-top: 1px solid var(--color-black);
+        border-top: var(--color-black) 2px solid;
         margin-bottom: calc(3 * var(--spacing));
 
         @media (width <= 992px) {
@@ -326,8 +334,6 @@ body {
                 display: grid;
                 grid-template-columns: 3fr 2fr;
                 grid-template-rows: auto;
-
-                margin-bottom: var(--spacing);
 
                 > div {
                     align-self: center;
